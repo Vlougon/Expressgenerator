@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bicyclesRouteApi = require('./routes/api/bicycles');
 const favicon = require('express-favicon');
 /* Instantiations */
 
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/bicycles', bicyclesRouteApi);
 /* Middleware */
 
 /* Error handlers */

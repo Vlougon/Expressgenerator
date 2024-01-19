@@ -16,4 +16,4 @@ let bike2 = new Bicycle(2, "Blue", "Orbea", [28.501367, -13.853476]);
 Bicycle.add(bike1);
 Bicycle.add(bike2);
 
-export { Bicycle };
+module.exports = Bicycle;
