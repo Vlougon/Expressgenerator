@@ -5,3 +5,14 @@ exports.bicycle_list = function (req, res) {
         bikes: Bicycle.allBicycles,
     });
 };
+
+exports.bicycle_creator = function (req, res) {
+    let newBike = new Bicycle(req.body.id, req.body.color, req.body.model);
+    newBike.ubication = [req.body.latitude, req.body.longitude];
+
+    Bicycle.add(newBike);
+
+    res.status(201).json({
+        bike: newBike
+    })
+};
