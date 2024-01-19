@@ -11,6 +11,10 @@ Bicycle.add = function (bike) {
     this.allBicycles.push(bike);
 }
 
+Bicycle.removeById = function (id) {
+    this.allBicycles = this.allBicycles.filter(bike => bike.id !== id);
+}
+
 let bike1 = new Bicycle(1, "Red", "Trek", [28.503789, -13.853296]);
 let bike2 = new Bicycle(2, "Blue", "Orbea", [28.501367, -13.853476]);
 Bicycle.add(bike1);

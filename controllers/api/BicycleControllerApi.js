@@ -16,3 +16,8 @@ exports.bicycle_creator = function (req, res) {
         bike: newBike
     })
 };
+
+exports.bicycle_remover = function (req, res) {
+    Bicycle.removeById(req.body.id);
+    res.status(204).send();
+};
